@@ -1,80 +1,117 @@
 /* styles.css */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    color: #333;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
 }
 
-header, footer {
-    background-color: #f4f4f4;
-    text-align: center;
-    padding: 10px 0;
+header,
+footer {
+  text-align: right;
+  padding: 1em 0;
+}
+
+.portfolio-bg {
+  position: fixed;
+  width: 50vw;
+  top: 24vh;
+  right: 5vw;
+}
+
+.intro {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px;
+}
+
+.intro-text {
+    max-width: 50%;
+}
+
+.intro-text h1 {
+    font-size: 7vh;
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+.intro-text h2 {
+    font-size: 7vh;
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+.intro-text p {
+    font-size: 4vh;
+    margin-block-start: 0;
+    margin-block-end: 0;
 }
 
 nav ul {
-    list-style: none;
-    padding: 0;
+  list-style: none;
+  padding: 0;
 }
 
 nav ul li {
-    display: inline;
-    margin: 0 10px;
+  display: inline;
+  margin: 0 10px;
 }
 
 nav ul li a {
-    text-decoration: none;
-    color: #333;
+  text-decoration: none;
+  color: #333;
 }
 
 main {
-    padding: 20px;
+  padding: 20px;
 }
 
 img {
-    max-width: 100%;
+  max-width: 100%;
 }
 
-.video-container, .audio-container {
-    text-align: center;
-    margin: 20px 0;
+.video-container,
+.audio-container {
+  text-align: center;
+  margin: 20px 0;
 }
 
 form {
-    max-width: 600px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
 }
 
 form label {
-    margin: 10px 0 5px;
+  margin: 10px 0 5px;
 }
 
-form input, form textarea {
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+form input,
+form textarea {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
 form button {
-    padding: 10px;
-    background-color: #5cb85c;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+  padding: 10px;
+  background-color: #5cb85c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 form button:hover {
-    background-color: #4cae4c;
+  background-color: #4cae4c;
 }
 
 @media (max-width: 600px) {
-    nav ul li {
-        display: block;
-        margin: 10px 0;
-    }
+  nav ul li {
+    display: block;
+    margin: 10px 0;
+  }
 }
-

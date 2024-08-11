@@ -1,30 +1,49 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=K2D:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+      rel="stylesheet"
+    />
     <title>Welcome to My Future Self</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header>
-        <h1>Welcome to My Future Self</h1>
-    </header>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="font.css" />
+    <script type="module">
+      import { importHtml } from "./core/framework/index.js";
+
+      importHtml({
+        path: "./components/navbar/navbar.html",
+        elementId: "imported-html",
+        document: document,
+      });
+      importHtml({
+        path: "./assets/svg/main-bg/main-bg.svg",
+        elementId: "imported-bg",
+        document: document,
+      });
+      importHtml({
+        path: "./assets/svg/main-portfolio/photo-bg.svg",
+        elementId: "porfolio-bg",
+        document: document,
+      });
+    </script>
+  </head>
+  <body>
+    <div id="imported-bg"></div>
+    <div id="imported-html"></div>
     <main>
-        <img src="images/profile.jpg" alt="Future Me">
-        <p>Welcome to my professional portfolio! Here, I share my journey and vision for the future. Let's explore what the next 10 years hold for me.</p>
+        <div id="porfolio-bg" class="portfolio-bg"></div>
+        <section class="intro">
+            <div class="intro-text">
+                <h1 class="k2d-semibold">I’m Artem Zhukovskyi</h1>
+                <h2 class="k2d-extralight">Software Developer</h2>
+                <p class="k2d-thin">focused on Web-technologies.</p>
+            </div>
+        </section>
     </main>
-    <footer>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="career.html">Career</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="skills.html">Skills</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </footer>
-    <script src="script.js"></script>
-</body>
+  </body>
 </html>
