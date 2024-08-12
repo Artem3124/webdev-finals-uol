@@ -30,6 +30,11 @@
         elementId: "porfolio-bg",
         document: document,
       });
+      importHtml({
+        path: "./assets/svg/main-shape/shape.svg",
+        elementId: "imported-shape",
+        document: document,
+      });
     </script>
   </head>
   <body>
@@ -41,9 +46,11 @@
             <div class="intro-text">
                 <h1 class="k2d-semibold">I’m Artem Zhukovskyi</h1>
                 <h2 class="k2d-extralight">Software Developer</h2>
-                <p class="k2d-thin">focused on Web-technologies.</p>
+                <p>focused on Web-technologies.</p>
             </div>
+            <img src="./assets/img/profile.png" alt="avatar" class="avatar" />
         </section>
+        <div id="imported-shape" class="shape"></div>
     </main>
   </body>
 </html>
