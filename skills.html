@@ -1,48 +1,66 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Skills and Expertise</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module">
+      import { progressBar } from "./components/progressbar/progressBar.js";
+      import { importHtml } from "./core/framework/index.js";
+
+      importHtml({
+        path: "./components/progressbar/progressBar.html",
+        elementId: "importedProgressBar",
+        document: document,
+      });
+
+          let n = progressBar({
+        element: document.getElementById("importedProgressBar"),
+        initialValue: 10,
+      });
+      n.move();
+      console.log(n);
+    </script>
+  </head>
+  <body>
+    <div id="importedProgressBar"></div>
     <header>
-        <h1>Skills and Expertise</h1>
+      <h1>Skills and Expertise</h1>
     </header>
     <main>
-        <h2>Technical Skills</h2>
-        <ul>
-            <li>Programming Languages: Python, JavaScript, C++</li>
-            <li>Web Development: HTML, CSS, React, Node.js</li>
-            <li>Database Management: SQL, MongoDB</li>
-            <li>Cloud Computing: AWS, Azure</li>
-            <li>Machine Learning: TensorFlow, scikit-learn</li>
-        </ul>
-        <h2>Soft Skills</h2>
-        <ul>
-            <li>Leadership</li>
-            <li>Team Collaboration</li>
-            <li>Problem-Solving</li>
-            <li>Effective Communication</li>
-        </ul>
-        <h2>Certifications</h2>
-        <ul>
-            <li>Certified AWS Solutions Architect</li>
-            <li>Google Data Engineer Certification</li>
-        </ul>
+      <h2>Technical Skills</h2>
+      <ul>
+        <li>Programming Languages: Python, JavaScript, C++</li>
+        <li>Web Development: HTML, CSS, React, Node.js</li>
+        <li>Database Management: SQL, MongoDB</li>
+        <li>Cloud Computing: AWS, Azure</li>
+        <li>Machine Learning: TensorFlow, scikit-learn</li>
+      </ul>
+      <h2>Soft Skills</h2>
+      <ul>
+        <li>Leadership</li>
+        <li>Team Collaboration</li>
+        <li>Problem-Solving</li>
+        <li>Effective Communication</li>
+      </ul>
+      <h2>Certifications</h2>
+      <ul>
+        <li>Certified AWS Solutions Architect</li>
+        <li>Google Data Engineer Certification</li>
+      </ul>
     </main>
     <footer>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="career.html">Career</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="skills.html">Skills</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="career.html">Career</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="skills.html">Skills</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
     </footer>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
