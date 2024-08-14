@@ -6,28 +6,28 @@
     <title>Skills and Expertise</title>
     <link rel="stylesheet" href="styles.css" />
     <script type="module">
-      import { progressBar } from "./components/progressbar/progressBar.js";
+      import { progressBar } from "./services/progressBar.js";
       import { importHtml } from "./core/framework/index.js";
 
       importHtml({
-        path: "./components/progressbar/progressBar.html",
-        elementId: "importedProgressBar",
+        path: "./components/navbar/navbar.html",
+        elementId: "importedHeader",
         document: document,
       });
 
-          let n = progressBar({
-        element: document.getElementById("importedProgressBar"),
+      let n = progressBar({
+        element: document.getElementById("progressBarFill"),
         initialValue: 10,
       });
+
       n.move();
-      console.log(n);
     </script>
   </head>
   <body>
-    <div id="importedProgressBar"></div>
-    <header>
-      <h1>Skills and Expertise</h1>
-    </header>
+    <div id="progressBar" class="progressBar">
+      <div id="progressBarFill" class="progressBarFill">10%</div>
+    </div>
+    <div id="importedHeader"></div>
     <main>
       <h2>Technical Skills</h2>
       <ul>
@@ -63,4 +63,18 @@
     </footer>
     <script src="script.js"></script>
   </body>
+  <style>
+    #progressBar {
+      width: 100%;
+      background-color: #ddd;
+    }
+    #progressBarFill {
+      width: 10%;
+      height: 30px;
+      background-color: #04aa6d;
+      text-align: center;
+      line-height: 30px;
+      color: white;
+    }
+  </style>
 </html>

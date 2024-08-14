@@ -19,14 +19,12 @@ const progressBar = (
       if (endReached) {
         return;
       }
-      // endReached = true;
       var interval = setInterval(() => {
         if (progress >= maxValue) {
           clearInterval(interval);
           endReached = true;
         } else {
           progress++;
-          console.log("progress", progress);
           elementRef.style.width = progress + "%";
           elementRef.innerHTML = progress + "%";
         }
