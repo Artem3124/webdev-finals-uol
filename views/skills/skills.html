@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Skills and Expertise</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <script type="module">
+      import { progressBar } from "/components/progressBar/progressBar.js";
+      import { importHtml } from "/core/framework/index.js";
+
+      importHtml({
+        path: "/components/navbar/navbar.html",
+        elementId: "importedHeader",
+        document: document,
+      });
+
+      importHtml({
+        path: "/components/progressBar/progressBar.html",
+        elementId: "importedProgressBar",
+        document: document,
+      });
+    </script>
+  </head>
+  <body>
+    
+  </body>
+  <style>
+    #progressBar {
+      width: 100%;
+      background-color: #ddd;
+    }
+    #progressBarFill {
+      width: 10%;
+      height: 30px;
+      background-color: #04aa6d;
+      text-align: center;
+      line-height: 30px;
+      color: white;
+    }
+  </style>
+</html>
