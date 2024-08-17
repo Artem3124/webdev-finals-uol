@@ -1,4 +1,15 @@
-<link rel="stylesheet" href="./components/progressBar/progressBar.css" />
+<link rel="stylesheet" href="/components/progressBar/progressBar.css" />
+<script type="module">
+  import { progressBar } from "/components/progressBar/progressBar.js";
+  import { importHtml } from "/core/framework/index.js";
+
+  let n = progressBar({
+    element: document.getElementById("progressBarFill"),
+    initialValue: 10,
+  });
+
+  n.move();
+</script>
 <div id="progressBar" class="progressBar">
   <div id="progressBarFill" class="progressBarFill">10%</div>
 </div>

@@ -3,7 +3,7 @@
         "type": "module",
         "baseUrl": "./",
         "paths": {
-          "src/*": ["./src/*"]
+          "src/*": ["./*"]
         }
     }
 }
