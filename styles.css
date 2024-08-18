@@ -12,6 +12,13 @@ footer {
   padding: 0.2em 0;
 }
 
+background {
+  z-index: -1;
+  position: fixed;
+  height: -webkit-fill-available;
+  width: -webkit-fill-available;
+}
+
 .portfolio-bg {
   position: fixed;
   width: 50vw;

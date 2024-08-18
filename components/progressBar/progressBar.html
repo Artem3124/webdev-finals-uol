@@ -3,13 +3,15 @@
   import { progressBar } from "/components/progressBar/progressBar.js";
   import { importHtml } from "/core/framework/index.js";
 
+  const progressBarElement = document.getElementById("progressBarFill");
+
   let n = progressBar({
-    element: document.getElementById("progressBarFill"),
+    element: progressBarElement,
     initialValue: 10,
   });
 
   n.move();
 </script>
 <div id="progressBar" class="progressBar">
-  <div id="progressBarFill" class="progressBarFill">10%</div>
+  <div id="progressBarFill" class="progressBarFill"></div>
 </div>

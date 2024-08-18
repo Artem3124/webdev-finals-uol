@@ -1,0 +1,7 @@
+main .cs-stat  {
+    width: 30em;
+}
+
+main .cs-stat #progressBarFill {
+    background-color: yellow;
+}

@@ -26,7 +26,6 @@ const progressBar = (
         } else {
           progress++;
           elementRef.style.width = progress + "%";
-          elementRef.innerHTML = progress + "%";
         }
       }, speed);
     },

@@ -1,7 +1,7 @@
 #progressBar {
   width: 100%;
-  background-color: #ddd;
 }
+
 #progressBarFill {
   width: 10%;
   height: 30px;
@@ -9,4 +9,5 @@
   text-align: center;
   line-height: 30px;
   color: white;
+  border-radius: 4px;
 }

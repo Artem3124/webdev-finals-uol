@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Skills and Expertise</title>
-    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/views/skills/styles.css" />
     <script type="module">
       import { progressBar } from "/components/progressBar/progressBar.js";
       import { importHtml } from "/core/framework/index.js";
@@ -17,26 +18,22 @@
 
       importHtml({
         path: "/components/progressBar/progressBar.html",
-        elementId: "importedProgressBar",
+        elementId: "progressBar1",
+        document: document,
+      });
+
+      importHtml({
+        path: "/assets/svg/skills-bg/skills-bg.svg",
+        elementId: "importedBg",
         document: document,
       });
     </script>
   </head>
   <body>
-    
+    <div id="importedHeader"></div>
+    <div id="importedBg"></div>
+    <main>
+        <div class="cs-stat" id="progressBar1"></div>
+    </main>
   </body>
-  <style>
-    #progressBar {
-      width: 100%;
-      background-color: #ddd;
-    }
-    #progressBarFill {
-      width: 10%;
-      height: 30px;
-      background-color: #04aa6d;
-      text-align: center;
-      line-height: 30px;
-      color: white;
-    }
-  </style>
 </html>
