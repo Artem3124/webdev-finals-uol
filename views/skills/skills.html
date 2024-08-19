@@ -18,6 +18,12 @@
 
       importHtml({
         path: "/components/progressBar/progressBar.html",
+        elementId: "progressBar2",
+        document: document,
+      });
+
+      importHtml({
+        path: "/components/progressBar/progressBar.html",
         elementId: "progressBar1",
         document: document,
       });
@@ -32,8 +38,15 @@
   <body>
     <div id="importedHeader"></div>
     <div id="importedBg"></div>
-    <main>
-        <div class="cs-stat" id="progressBar1"></div>
-    </main>
+    <div class="skills-main">
+      <div class="skills">
+          <div class="skills-wrap">
+              <div class="cs-stats progress-bar" id="progressBar1"></div>
+            <h2>C#</h2>
+            <p>Intermediate</p>
+          </div>
+        <div class="js-stats progress-bar" id="progressBar2"></div>
+      </div>
+    </div>
   </body>
 </html>

@@ -1,7 +1,25 @@
-main .cs-stat  {
-    width: 30em;
+.skills-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2em;
 }
 
-main .cs-stat #progressBarFill {
-    background-color: yellow;
+.skills-wrap {
+  display: flex;
+  align-items: center;
+}
+
+.progress-bar {
+  width: 30em;
+  direction: rtl;
+}
+
+.cs-stats #progressBarFill {
+  background-color: #9f89ce;
+}
+
+.js-stats #progressBarFill {
+  background-color: #fff387;
 }
