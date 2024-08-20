@@ -6,20 +6,58 @@
   margin-top: 2em;
 }
 
+.skills {
+    width: 80vw;
+
 .skills-wrap {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
+}
+
+.skills-wrap h3 {
+    margin-right: 0.4em;
 }
 
 .progress-bar {
-  width: 30em;
+  height: 50px;
+  width: 10%;
+  max-width: 48%;
+  background-color: #04aa6d;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 4px;
   direction: rtl;
 }
 
-.cs-stats #progressBarFill {
+.progress-description .vertical-line {
+  height: 2px;
+  width: -webkit-fill-available;
+  background-color: black;
+  border-radius: 106px;
+  margin: 0 10px;
+}
+
+.progress-description {
+  width: 50%;
+  display: flex;
+  padding: 0 1em;
+  align-items: center;
+  font-size: large;
+}
+
+.cs-stats {
   background-color: #9f89ce;
 }
 
-.js-stats #progressBarFill {
+.js-stats {
   background-color: #fff387;
+}
+
+.ts-stats {
+  background-color: #75A7DE;
+}
+
+.py-stats {
+    background-color: #6396BF;
 }

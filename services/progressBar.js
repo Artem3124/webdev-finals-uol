@@ -9,25 +9,32 @@ const progressBar = (
     isEnd = false,
   } = params;
 
+  let elementRef = element;
   let progress = initialValue;
   let endReached = isEnd;
-  let elementRef = element;
+
+  elementRef.style.width = initialValue + "%";
 
   return {
-    ...params,
-    move: () => {
+    elementRef,
+    progress,
+    endReached,
+    speed,
+    maxValue,
+    move: async () => {
       if (endReached) {
         return;
       }
-      var interval = setInterval(() => {
+      let interval = setInterval(() => {
         if (progress >= maxValue) {
           clearInterval(interval);
           endReached = true;
         } else {
+          console.log(progress);
           progress++;
           elementRef.style.width = progress + "%";
         }
-      }, speed);
+      }, 100 / speed);
     },
   };
 };
