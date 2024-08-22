@@ -13,6 +13,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  margin-bottom: 1em;
 }
 
 .skills-wrap h3 {
@@ -20,13 +21,13 @@
 }
 
 .progress-bar {
-  height: 50px;
-  width: 10%;
+  height: 4em;
+  width: 2%;
   max-width: 48%;
   background-color: #04aa6d;
   text-align: center;
   line-height: 30px;
-  border-radius: 4px;
+  border-radius: 5px;
   direction: rtl;
 }
 
@@ -41,9 +42,14 @@
 .progress-description {
   width: 50%;
   display: flex;
+  font-size: 3em;
   padding: 0 1em;
   align-items: center;
   font-size: large;
+}
+
+.progress-description .header {
+    font-size: 2em;
 }
 
 .cs-stats {
@@ -62,6 +68,59 @@
     background-color: #6396BF;
 }
 
-.git-stats {
-    background-
+.bash-stats {
+    background-color: #9DDF6F;
 }
+
+.cpp-stats {
+    background-color: #3973A0;
+}
+
+.sql-stats {
+    background-color: #6B9AC0;
+}
+
+.go-stats {
+    background-color: #74CDDD;
+}
+
+.git-stats {
+    background-color: #F08168;
+}
+
+.docker-stats {
+    background-color: #59B1F0;
+}
+
+.azure-stats {
+    background-color: #34B1EA;
+}
+
+.dotnet-stats {
+    background-color: #9F89CE;
+}
+
+.angular-stats {
+    background-color: #F55C8B;
+}
+
+.vue-stats {
+    background-color: #41B883;
+}
+
+.react-stats {
+    background-color: #58C4DC;
+}
+
+.windows-stats {
+    background-color: #0176D1;
+}
+
+.arch-stats {
+    background-color: #58A6FF;
+}
+
+.debian-stats {
+    background-color: #DB557B;
+}
+

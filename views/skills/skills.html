@@ -26,37 +26,29 @@
         document: document,
       });
 
-      const csProgressBar = progressBar({
-        element: document.getElementById("progressBar1"),
-        maxValue: 50,
-        speed: 3,
-      });
+      let progresses = [
+        55, 40, 37, 22, 18, 17, 15, 8, 40, 20, 17, 45, 32, 25, 15, 40, 37,
+        25, 20, 40, 35, 14,
+      ];
 
-      const jsProgressBar = progressBar({
-        element: document.getElementById("progressBar2"),
-        maxValue: 40,
-        speed: 3,
-      });
+      let bars = document.querySelectorAll(".progress-bar");
+      let progressBars = [];
 
-      const tsProgressBar = progressBar({
-        element: document.getElementById("progressBar3"),
-        initialValue: 1,
-        maxValue: 35,
-        speed: 3,
-      });
-
-      const pyProgressBar = progressBar({
-        element: document.getElementById("progressBar4"),
-        initialValue: 1,
-        maxValue: 27,
-        speed: 1,
+      let importedBars = bars.values().forEach((bar, index) => {
+        let progressBarModel = progressBar({
+          element: bar,
+          initialValue: 1,
+          maxValue: progresses[index],
+          speed: 3,
+        });
+        progressBars.push(progressBarModel);
+        return index;
       });
 
       window.onload = () => {
-        csProgressBar.move();
-        jsProgressBar.move();
-        tsProgressBar.move();
-        pyProgressBar.move();
+        progressBars.forEach((bar) => {
+          bar.move();
+        });
       };
     </script>
   </head>
@@ -70,38 +62,69 @@
       <div class="skills">
         <div class="skills-wrap">
           <div class="cs-stats progress-bar" id="progressBar1"></div>
-          <div class="progress-description k2d-regular">
-            <h3>C#</h3>
+          <div class="progress-description k2d-light">
+            <div class="header">C#</div>
             <div class="vertical-line"></div>
           </div>
         </div>
 
         <div class="skills-wrap">
           <div class="js-stats progress-bar" id="progressBar2"></div>
-          <div class="progress-description k2d-regular">
-            <h3>JS</h3>
+          <div class="progress-description k2d-light">
+            <div class="header">JS</div>
             <div class="vertical-line"></div>
           </div>
         </div>
 
         <div class="skills-wrap">
           <div class="ts-stats progress-bar" id="progressBar3"></div>
-          <div class="progress-description k2d-regular">
-            <h3>TS</h3>
+          <div class="progress-description k2d-light">
+            <div class="header">TS</div>
             <div class="vertical-line"></div>
           </div>
         </div>
 
         <div class="skills-wrap">
           <div class="py-stats progress-bar" id="progressBar4"></div>
-          <div class="progress-description k2d-regular">
-            <h3>Py</h3>
+          <div class="progress-description k2d-light">
+            <div class="header">Py</div>
+            <div class="vertical-line"></div>
+          </div>
+        </div>
+
+        <div class="skills-wrap">
+          <div class="bash-stats progress-bar" id="progressBar4"></div>
+          <div class="progress-description k2d-light">
+            <div class="header">Bash</div>
+            <div class="vertical-line"></div>
+          </div>
+        </div>
+
+        <div class="skills-wrap">
+          <div class="cpp-stats progress-bar" id="progressBar4"></div>
+          <div class="progress-description k2d-light">
+            <div class="header">C++</div>
+            <div class="vertical-line"></div>
+          </div>
+        </div>
+
+        <div class="skills-wrap">
+          <div class="sql-stats progress-bar" id="sqlBar"></div>
+          <div class="progress-description k2d-light">
+            <div class="header">SQL</div>
+            <div class="vertical-line"></div>
+          </div>
+        </div>
+
+        <div class="skills-wrap">
+          <div class="go-stats progress-bar" id="goBar"></div>
+          <div class="progress-description k2d-light">
+            <div class="header">GO</div>
             <div class="vertical-line"></div>
           </div>
         </div>
       </div>
-    </div>    
-
+    </div>
     <div class="report-main-section">
       <div class="skills-header">
         <h1 class="k2d-semibold">Tools</h1>
@@ -109,30 +132,96 @@
       <div class="skills">
         <div class="skills-wrap">
           <div class="git-stats progress-bar" id="gitBar"></div>
-          <div class="progress-description k2d-regular">
-            <h3>Git</h3>
+          <div class="progress-description k2d-light">
+            <div class="header">Git</div>
             <div class="vertical-line"></div>
           </div>
         </div>
 
         <div class="skills-wrap">
-          <div class="js-stats progress-bar" id="progressBar2"></div>
-          <div class="progress-description k2d-regular">
-            <h3>Docker</h3>
+          <div class="docker-stats progress-bar" id="dockerBar"></div>
+          <div class="progress-description k2d-light">
+            <div class="header">Docker</div>
             <div class="vertical-line"></div>
           </div>
         </div>
 
         <div class="skills-wrap">
-          <div class="ts-stats progress-bar" id="progressBar3"></div>
-          <div class="progress-description k2d-regular">
-            <h3>Azure</h3>
+          <div class="azure-stats progress-bar" id="azureBar"></div>
+          <div class="progress-description k2d-light">
+            <div class="header">Azure</div>
             <div class="vertical-line"></div>
           </div>
         </div>
       </div>
     </div>
+    <div class="report-main-section">
+      <div class="skills-header">
+        <h1 class="k2d-semibold">Frameworks and Libraries</h1>
+      </div>
+      <div class="skills">
+        <div class="skills-wrap">
+          <div class="dotnet-stats progress-bar" id="netCoreBar"></div>
+          <div class="progress-description k2d-light">
+            <div class="header">.NET Core</div>
+            <div class="vertical-line"></div>
+          </div>
+        </div>
 
+        <div class="skills-wrap">
+          <div class="angular-stats progress-bar" id="angularBar"></div>
+          <div class="progress-description k2d-light">
+            <div class="header">Angular</div>
+            <div class="vertical-line"></div>
+          </div>
+        </div>
 
+        <div class="skills-wrap">
+          <div class="vue-stats progress-bar" id="vueBar"></div>
+          <div class="progress-description k2d-light">
+            <div class="header">Vue</div>
+            <div class="vertical-line"></div>
+          </div>
+        </div>
+
+        <div class="skills-wrap">
+          <div class="react-stats progress-bar" id="reactBar"></div>
+          <div class="progress-description k2d-light">
+            <div class="header">React</div>
+            <div class="vertical-line"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="report-main-section">
+      <div class="skills-header">
+        <h1 class="k2d-semibold">Oreration Systems</h1>
+      </div>
+      <div class="skills">
+        <div class="skills-wrap">
+          <div class="windows-stats progress-bar" id="windowsBar"></div>
+          <div class="progress-description k2d-light">
+            <div class="header">Windows</div>
+            <div class="vertical-line"></div>
+          </div>
+        </div>
+
+        <div class="skills-wrap">
+          <div class="arch-stats progress-bar" id="archBar"></div>
+          <div class="progress-description k2d-light">
+            <div class="header">Arch Linux</div>
+            <div class="vertical-line"></div>
+          </div>
+        </div>
+
+        <div class="skills-wrap">
+          <div class="debian-stats progress-bar" id="debianBar"></div>
+          <div class="progress-description k2d-light">
+            <div class="header">Debian</div>
+            <div class="vertical-line"></div>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

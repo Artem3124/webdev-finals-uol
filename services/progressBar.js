@@ -3,7 +3,7 @@ const progressBar = (
 ) => {
   const {
     element = element ?? console.error("element is required"),
-    initialValue = 10,
+    initialValue = 1,
     maxValue = 100,
     speed = 10,
     isEnd = false,
@@ -30,7 +30,6 @@ const progressBar = (
           clearInterval(interval);
           endReached = true;
         } else {
-          console.log(progress);
           progress++;
           elementRef.style.width = progress + "%";
         }
