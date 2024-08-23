@@ -45,7 +45,7 @@
         return index;
       });
 
-      let reportMainSectionsHeight = 100;
+      let reportMainSectionsHeight = 400;
 
       document
         .querySelectorAll(".report-main-section")
@@ -70,58 +70,60 @@
       };
     </script>
   </head>
-  <body>
+
+<body>
     <div id="importedHeader"></div>
-    <div id="importedBg"></div>
-    <div class="report-main-section">
-      <div class="skills-header">
-        <div class="k2d-regular">Languages</div>
-      </div>
+    <section id="importedBg"></section>
+    
+    <section class="report-main-section">
+      <h2 class="skills-header">
+        <span class="k2d-regular">Languages</span>
+      </h2>
       <div class="skills">
         <div class="skills-wrap">
-          <div class="cs-stats progress-bar" id="progressBar1"></div>
+          <div class="cs-stats progress-bar" id="csBar"></div>
           <div class="progress-description k2d-light">
-            <div class="header">C#</div>
+            <h3 class="header">C#</h3>
             <div class="vertical-line"></div>
           </div>
         </div>
 
         <div class="skills-wrap">
-          <div class="js-stats progress-bar" id="progressBar2"></div>
+          <div class="js-stats progress-bar" id="jsBar"></div>
           <div class="progress-description k2d-light">
-            <div class="header">JavaScript</div>
+            <h3 class="header">JavaScript</h3>
             <div class="vertical-line"></div>
           </div>
         </div>
 
         <div class="skills-wrap">
-          <div class="ts-stats progress-bar" id="progressBar3"></div>
+          <div class="ts-stats progress-bar" id="tsBar"></div>
           <div class="progress-description k2d-light">
-            <div class="header">TypeScript</div>
+            <h3 class="header">TypeScript</h3>
             <div class="vertical-line"></div>
           </div>
         </div>
 
         <div class="skills-wrap">
-          <div class="py-stats progress-bar" id="progressBar4"></div>
+          <div class="py-stats progress-bar" id="pyBar"></div>
           <div class="progress-description k2d-light">
-            <div class="header">Py</div>
+            <h3 class="header">Python</h3>
             <div class="vertical-line"></div>
           </div>
         </div>
 
         <div class="skills-wrap">
-          <div class="bash-stats progress-bar" id="progressBar4"></div>
+          <div class="bash-stats progress-bar" id="bashBar"></div>
           <div class="progress-description k2d-light">
-            <div class="header">Bash</div>
+            <h3 class="header">Bash</h3>
             <div class="vertical-line"></div>
           </div>
         </div>
 
         <div class="skills-wrap">
-          <div class="cpp-stats progress-bar" id="progressBar4"></div>
+          <div class="cpp-stats progress-bar" id="cppBar"></div>
           <div class="progress-description k2d-light">
-            <div class="header">C++</div>
+            <h3 class="header">C++</h3>
             <div class="vertical-line"></div>
           </div>
         </div>
@@ -129,7 +131,7 @@
         <div class="skills-wrap">
           <div class="sql-stats progress-bar" id="sqlBar"></div>
           <div class="progress-description k2d-light">
-            <div class="header">SQL</div>
+            <h3 class="header">SQL</h3>
             <div class="vertical-line"></div>
           </div>
         </div>
@@ -137,21 +139,22 @@
         <div class="skills-wrap">
           <div class="go-stats progress-bar" id="goBar"></div>
           <div class="progress-description k2d-light">
-            <div class="header">GO</div>
+            <h3 class="header">Go</h3>
             <div class="vertical-line"></div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="report-main-section">
-      <div class="skills-header">
-        <div class="k2d-regular">Tools</div>
-      </div>
+    </section>
+
+    <section class="report-main-section">
+      <h2 class="skills-header">
+        <span class="k2d-regular">Tools</span>
+      </h2>
       <div class="skills">
         <div class="skills-wrap">
           <div class="git-stats progress-bar" id="gitBar"></div>
           <div class="progress-description k2d-light">
-            <div class="header">Git</div>
+            <h3 class="header">Git</h3>
             <div class="vertical-line"></div>
           </div>
         </div>
@@ -159,7 +162,7 @@
         <div class="skills-wrap">
           <div class="docker-stats progress-bar" id="dockerBar"></div>
           <div class="progress-description k2d-light">
-            <div class="header">Docker</div>
+            <h3 class="header">Docker</h3>
             <div class="vertical-line"></div>
           </div>
         </div>
@@ -167,21 +170,22 @@
         <div class="skills-wrap">
           <div class="azure-stats progress-bar" id="azureBar"></div>
           <div class="progress-description k2d-light">
-            <div class="header">Azure</div>
+            <h3 class="header">Azure</h3>
             <div class="vertical-line"></div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="report-main-section">
-      <div class="skills-header">
-        <div class="k2d-regular">Frameworks and Libraries</div>
-      </div>
+    </section>
+
+    <section class="report-main-section">
+      <h2 class="skills-header">
+        <span class="k2d-regular">Frameworks and Libraries</span>
+      </h2>
       <div class="skills">
         <div class="skills-wrap">
           <div class="dotnet-stats progress-bar" id="netCoreBar"></div>
           <div class="progress-description k2d-light">
-            <div class="header">.NET Core</div>
+            <h3 class="header">.NET Core</h3>
             <div class="vertical-line"></div>
           </div>
         </div>
@@ -189,7 +193,7 @@
         <div class="skills-wrap">
           <div class="angular-stats progress-bar" id="angularBar"></div>
           <div class="progress-description k2d-light">
-            <div class="header">Angular</div>
+            <h3 class="header">Angular</h3>
             <div class="vertical-line"></div>
           </div>
         </div>
@@ -197,7 +201,7 @@
         <div class="skills-wrap">
           <div class="vue-stats progress-bar" id="vueBar"></div>
           <div class="progress-description k2d-light">
-            <div class="header">Vue</div>
+            <h3 class="header">Vue</h3>
             <div class="vertical-line"></div>
           </div>
         </div>
@@ -205,21 +209,22 @@
         <div class="skills-wrap">
           <div class="react-stats progress-bar" id="reactBar"></div>
           <div class="progress-description k2d-light">
-            <div class="header">React</div>
+            <h3 class="header">React</h3>
             <div class="vertical-line"></div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="report-main-section">
-      <div class="skills-header">
-        <div class="k2d-regular">Oreration Systems</div>
-      </div>
+    </section>
+
+    <section class="report-main-section">
+      <h2 class="skills-header">
+        <span class="k2d-regular">Operating Systems</span>
+      </h2>
       <div class="skills">
         <div class="skills-wrap">
           <div class="windows-stats progress-bar" id="windowsBar"></div>
           <div class="progress-description k2d-light">
-            <div class="header">Windows</div>
+            <h3 class="header">Windows</h3>
             <div class="vertical-line"></div>
           </div>
         </div>
@@ -227,7 +232,7 @@
         <div class="skills-wrap">
           <div class="arch-stats progress-bar" id="archBar"></div>
           <div class="progress-description k2d-light">
-            <div class="header">Arch Linux</div>
+            <h3 class="header">Arch Linux</h3>
             <div class="vertical-line"></div>
           </div>
         </div>
@@ -235,11 +240,11 @@
         <div class="skills-wrap">
           <div class="debian-stats progress-bar" id="debianBar"></div>
           <div class="progress-description k2d-light">
-            <div class="header">Debian</div>
+            <h3 class="header">Debian</h3>
             <div class="vertical-line"></div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   </body>
 </html>
