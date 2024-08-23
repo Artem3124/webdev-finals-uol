@@ -12,7 +12,7 @@
     />
     <link rel="stylesheet" href="/font.css" />
     <script type="module">
-      import { importHtml } from "/core/framework/index.js";
+      import { importHtml, elementProcessor } from "/core/framework/index.js";
       import { progressBar } from "/services/progressBar.js";
 
       importHtml({
@@ -27,8 +27,8 @@
       });
 
       let progresses = [
-        55, 40, 37, 22, 18, 17, 15, 8, 40, 20, 17, 45, 32, 25, 15, 40, 37,
-        25, 20, 40, 35, 14,
+        45, 40, 37, 22, 18, 17, 15, 8, 40, 20, 17, 45, 32, 25, 15, 40, 37, 25,
+        20, 40, 35, 14,
       ];
 
       let bars = document.querySelectorAll(".progress-bar");
@@ -45,6 +45,24 @@
         return index;
       });
 
+      let reportMainSectionsHeight = 100;
+
+      document
+        .querySelectorAll(".report-main-section")
+        .values()
+        .forEach((section) => {
+          reportMainSectionsHeight += elementProcessor(
+            section,
+            document,
+          ).getTotalHeight();
+        });
+
+      console.log(reportMainSectionsHeight);
+
+      document.getElementById("importedBg").style.maxHeight =
+        `${reportMainSectionsHeight}px`;
+      document.getElementById("importedBg").style.overflow = "hidden";
+
       window.onload = () => {
         progressBars.forEach((bar) => {
           bar.move();
@@ -57,7 +75,7 @@
     <div id="importedBg"></div>
     <div class="report-main-section">
       <div class="skills-header">
-        <h1 class="k2d-semibold">Languages</h1>
+        <div class="k2d-regular">Languages</div>
       </div>
       <div class="skills">
         <div class="skills-wrap">
@@ -71,7 +89,7 @@
         <div class="skills-wrap">
           <div class="js-stats progress-bar" id="progressBar2"></div>
           <div class="progress-description k2d-light">
-            <div class="header">JS</div>
+            <div class="header">JavaScript</div>
             <div class="vertical-line"></div>
           </div>
         </div>
@@ -79,7 +97,7 @@
         <div class="skills-wrap">
           <div class="ts-stats progress-bar" id="progressBar3"></div>
           <div class="progress-description k2d-light">
-            <div class="header">TS</div>
+            <div class="header">TypeScript</div>
             <div class="vertical-line"></div>
           </div>
         </div>
@@ -127,7 +145,7 @@
     </div>
     <div class="report-main-section">
       <div class="skills-header">
-        <h1 class="k2d-semibold">Tools</h1>
+        <div class="k2d-regular">Tools</div>
       </div>
       <div class="skills">
         <div class="skills-wrap">
@@ -157,7 +175,7 @@
     </div>
     <div class="report-main-section">
       <div class="skills-header">
-        <h1 class="k2d-semibold">Frameworks and Libraries</h1>
+        <div class="k2d-regular">Frameworks and Libraries</div>
       </div>
       <div class="skills">
         <div class="skills-wrap">
@@ -195,7 +213,7 @@
     </div>
     <div class="report-main-section">
       <div class="skills-header">
-        <h1 class="k2d-semibold">Oreration Systems</h1>
+        <div class="k2d-regular">Oreration Systems</div>
       </div>
       <div class="skills">
         <div class="skills-wrap">

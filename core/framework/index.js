@@ -1,8 +1,8 @@
 const importHtml = (params = { path, elementId, document, styles }) => {
   const {
-    path = params.path ?? console.log("Path param is required"),
-    elementId = params.elementId ?? console.log("ElementId param is required"),
-    document = params.document ?? console.log("document param is required"),
+    path = params.path ?? console.error("Path param is required"),
+    elementId = params.elementId ?? console.error("ElementId param is required"),
+    document = params.document ?? console.error("document param is required"),
     styles = null,
   } = params;
   params.document.addEventListener("DOMContentLoaded", () => {
@@ -32,4 +32,19 @@ const importHtml = (params = { path, elementId, document, styles }) => {
   });
 };
 
-export { importHtml };
+const elementProcessor = (element, document) => {
+    return {
+        getTotalHeight: () => {
+            const style = document.defaultView.getComputedStyle(element);
+            const height = element.offsetHeight;
+            const paddingTop = parseFloat(style.paddingTop);
+            const paddingBottom = parseFloat(style.paddingBottom);
+            const marginTop = parseFloat(style.marginTop);
+            const marginBottom = parseFloat(style.marginBottom);
+
+            return height + paddingTop + paddingBottom + marginTop + marginBottom;
+        },
+    };
+};
+
+export { importHtml, elementProcessor };

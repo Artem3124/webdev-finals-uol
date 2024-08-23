@@ -6,6 +6,11 @@
   margin-top: 2em;
 }
 
+.skills-header {
+    font-size: 3.5em;
+    margin-bottom: 1em;
+}
+
 .skills {
     width: 80vw;
 
@@ -16,12 +21,8 @@
   margin-bottom: 1em;
 }
 
-.skills-wrap h3 {
-    margin-right: 0.4em;
-}
-
 .progress-bar {
-  height: 4em;
+  height: 5em;
   width: 2%;
   max-width: 48%;
   background-color: #04aa6d;
