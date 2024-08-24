@@ -1,0 +1,104 @@
+.contact-main {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-main h2 {
+  font-size: 3em;
+}
+
+.mb-1 {
+  margin-bottom: 1em;
+}
+
+.mt-1 {
+  margin-top: 1em;
+}
+
+.mt-4 {
+  margin-top: 4em;
+}
+
+#input-field-sm::placeholder,
+#text-field::placeholder {
+  font-family: "K2D", sans-serif;
+  color: rgba(0, 0, 0, 0.58);
+}
+
+#text-field {
+  background-color: transparent;
+  padding: 1em;
+  border-radius: 0.5em;
+  font-size: 1em;
+  border: 1px solid black;
+  min-height: 20em;
+}
+
+#text-field:valid {
+  border: 1px solid #28c855;
+}
+
+#text-field:user-invalid {
+  border: 1px solid #ff776f;
+}
+
+#text-field:focus-visible,
+#input-field-sm:focus-visible,
+.contact-main button:focus-visible {
+  outline: none;
+}
+
+#input-field-sm:user-invalid {
+  border-bottom: 1px solid #ff776f;
+}
+
+#input-field-sm:valid {
+  border-bottom: 1px solid #28c855;
+}
+
+#input-field-sm {
+  background-color: transparent;
+  border-radius: 0;
+  padding: 0.2em 0.5em;
+  border: 0px;
+  font-size: 1.5em;
+  border-bottom: 1px solid black;
+}
+
+.button-wrap {
+  display: flex;
+  font-size: 1em;
+  justify-content: space-between;
+}
+
+.contact-main button:hover {
+  background-color: transparent;
+  color: black;
+  outline: none;
+  border: 1px dashed black;
+  transition: all 3s;
+}
+
+.contact-main button::focus-visible {
+  background-color: transparent;
+  color: black;
+}
+
+.contact-main button {
+  background-color: transparent;
+  color: black;
+  border: 1px solid black;
+  border-radius: 0.5em;
+  font-size: 1.2em;
+  width: auto;
+  padding: 0.4em 5em;
+}
+
+form {
+  width: 60vh;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}

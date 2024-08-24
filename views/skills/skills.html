@@ -11,20 +11,25 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/font.css" />
-    <script type="module">
-      import { importHtml, elementProcessor } from "/core/framework/index.js";
-      import { progressBar } from "/services/progressBar.js";
+    <script type="module" defer>
+      import { importHtml } from "/core/framework/index.js";
 
       importHtml({
         path: "/components/navbar/navbar.html",
         elementId: "importedHeader",
         document: document,
       });
+
       importHtml({
         path: "/assets/svg/skills-bg/skills-bg.svg",
         elementId: "importedBg",
         document: document,
       });
+      
+    </script>
+    <script type="module" async>
+      import { elementProcessor } from "/core/framework/index.js";
+      import { progressBar } from "/services/progressBar.js";
 
       let progresses = [
         45, 40, 37, 22, 18, 17, 15, 8, 40, 20, 17, 45, 32, 25, 15, 40, 37, 25,
@@ -39,7 +44,7 @@
           element: bar,
           initialValue: 1,
           maxValue: progresses[index],
-          speed: 3,
+          speed: 2.5,
         });
         progressBars.push(progressBarModel);
         return index;
@@ -63,18 +68,18 @@
         `${reportMainSectionsHeight}px`;
       document.getElementById("importedBg").style.overflow = "hidden";
 
-      window.onload = () => {
-        progressBars.forEach((bar) => {
-          bar.move();
+      window.onload = async () => {
+        await progressBars.forEach(async (bar) => {
+          await bar.move();
         });
       };
     </script>
   </head>
 
-<body>
+  <body>
     <div id="importedHeader"></div>
     <section id="importedBg"></section>
-    
+
     <section class="report-main-section">
       <h2 class="skills-header">
         <span class="k2d-regular">Languages</span>

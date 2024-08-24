@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Get in Touch</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/font.css" />
+    <link rel="stylesheet" href="/views/contact/contact.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=K2D:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+      rel="stylesheet"
+    />
+    <script type="module" src="/views/contact/contact.js" async></script>
+    <script type="module" defer>
+      import { importHtml } from "/core/framework/index.js";
+
+      importHtml({
+        path: "/components/navbar/navbar.html",
+        elementId: "importedHeader",
+        document: document,
+      });
+
+      importHtml({
+        path: "/assets/svg/contact-bg/contact-bg.svg",
+        elementId: "importedBg",
+        document: document,
+      });
+    </script>
+  </head>
+  <body>
+    <div id="importedHeader"></div>
+    <div id="importedBg"></div>
+    <main class="contact-main">
+      <h2 class="k2d-semibold mt-1">Feel free to reach me out!</h2>
+      <form
+        action="mailto:mr.zhukovsky02@gmail.com"
+        method="post"
+        enctype="text/plain"
+        class="k2d-regular"
+      >
+        <input
+          class="mb-1 mt-4"
+          id="input-field-sm"
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Your Name"
+          required
+        />
+        <input
+          class="mb-1"
+          id="input-field-sm"
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Your Email"
+          required
+        />
+        <textarea
+          class="mb-1"
+          id="text-field"
+          name="message"
+          placeholder="Your message please"
+          required
+        ></textarea>
+
+        <div class="button-wrap">
+          <button class="k2d-light" type="button">Clear</button>
+          <button class="k2d-light" type="submit">Send</button>
+        </div>
+      </form>
+    </main>
+  </body>
+</html>
