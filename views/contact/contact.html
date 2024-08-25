@@ -34,6 +34,7 @@
     <main class="contact-main">
       <h2 class="k2d-semibold mt-1">Feel free to reach me out!</h2>
       <form
+        id="contact-form"
         action="mailto:mr.zhukovsky02@gmail.com"
         method="post"
         enctype="text/plain"
@@ -64,9 +65,8 @@
           placeholder="Your message please"
           required
         ></textarea>
-
         <div class="button-wrap">
-          <button class="k2d-light" type="button">Clear</button>
+            <button class="k2d-light" type="button" onclick="resetForm(document.getElementById('contact-form'))">Clear</button>
           <button class="k2d-light" type="submit">Send</button>
         </div>
       </form>

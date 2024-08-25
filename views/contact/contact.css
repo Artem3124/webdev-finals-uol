@@ -38,10 +38,12 @@
 
 #text-field:valid {
   border: 1px solid #28c855;
+  transition: all 0.6s ease;
 }
 
 #text-field:user-invalid {
   border: 1px solid #ff776f;
+  transition: all 0.6s ease;
 }
 
 #text-field:focus-visible,
@@ -52,10 +54,12 @@
 
 #input-field-sm:user-invalid {
   border-bottom: 1px solid #ff776f;
+  transition: all 0.6s ease;
 }
 
 #input-field-sm:valid {
   border-bottom: 1px solid #28c855;
+  transition: all 0.6s ease;
 }
 
 #input-field-sm {
