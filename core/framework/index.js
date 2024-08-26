@@ -1,9 +1,10 @@
-const importHtml = (params = { path, elementId, document, styles }) => {
+const importHtml = (params = { path, elementId, document, styles, callback }) => {
   const {
     path = params.path ?? console.error("Path param is required"),
     elementId = params.elementId ?? console.error("ElementId param is required"),
     document = params.document ?? console.error("document param is required"),
     styles = null,
+    callback = null,
   } = params;
   params.document.addEventListener("DOMContentLoaded", () => {
     fetch(params.path)
@@ -27,6 +28,10 @@ const importHtml = (params = { path, elementId, document, styles }) => {
           newScript.src = script.src;
           document.body.appendChild(newScript);
         });
+
+        if (callback) {
+            callback();
+        }
       })
       .catch((error) => console.error("Error loading HTML:", error));
   });

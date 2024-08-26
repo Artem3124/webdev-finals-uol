@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="/views/career/career.css" />
     <script type="module">
       import { importHtml } from "/core/framework/index.js";
-      import { reportComponentActions } from "/components/career/year-report/year-report.js";
 
       importHtml({
         path: "/assets/svg/career-bg/career-bg.svg",
@@ -33,24 +32,63 @@
         // { year: 2029, description: "test" },
       ];
 
-      reports.forEach((report, index) => {
+      yearsRecords.forEach((record) => {
         importHtml({
           path: "/components/career/year-report/year-report.html",
-          elementId: yearsRecords[index].toString(),
+          elementId: record.year.toString(),
           document: document,
+          callback: function () {
+            const report = document.getElementById(record.year.toString());
+            const yearRow = report.querySelector(".year-row");
+            const descriptionRow = report.querySelector(".description-row");
+
+            if (yearRow && descriptionRow) {
+              yearRow.prepend(record.year);
+              descriptionRow.prepend(record.description);
+            } else {
+              console.error("Year row or description row not found");
+            }
+          },
         });
       });
 
-      const importedReports = document.querySelectorAll(".year-report");
+      // reports.forEach((report, index) => {
+      //   importHtml({
+      //     path: "/components/career/year-report/year-report.html",
+      //     elementId: yearsRecords[index].year.toString(),
+      //     document: document,
+      //     callback: () => {
+      //       const report = document.getElementById(yearsRecords[index].year.toString());
+      //       const yearRow = report.querySelector(".year-row");
+      //       const descriptionRow = report.querySelector(".description-row");
 
-      importedReports.forEach((report, index) => {
-        reportComponentActions({
-          parent: report,
-          elementsInputProperties: yearsRecords[index],
-        }).applyProperties();
-      });
-
+      //       if (yearRow && descriptionRow) {
+      //         yearRow.prepend(record.year);
+      //         descriptionRow.prepend(record.description);
+      //       } else {
+      //         console.error("Year row or description row not found");
+      //       }
+      //     },
+      //   });
+      // });
     </script>
+    <!-- <script type="text/javascript"> -->
+    <!--   let yearsRecords = [ -->
+    <!--     { year: 2024, description: "test" }, -->
+    <!--     { year: 2025, description: "test" }, -->
+    <!--     { year: 2026, description: "test" }, -->
+    <!--     { year: 2027, description: "test" }, -->
+    <!--   ]; -->
+
+    <!--   document.querySelectorAll(".year-report").forEach((report, index) => { -->
+    <!--     console.log(report); -->
+    <!--     console.log(report.querySelector(".year-row")); -->
+    <!--     report.querySelector(".year-row").prepend(yearsRecords[index].year); -->
+    <!--     report -->
+    <!--       .querySelector(".description-row") -->
+    <!--       .prepend(yearsRecords[index].description); -->
+    <!--   }); -->
+    <!-- </script> -->
   </head>
   <body>
     <div id="importedBg"></div>
