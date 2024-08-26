@@ -1,22 +1,9 @@
 /* styles.css */
 body {
-  font-family: Arial, sans-serif;
+  font-family: "K2D", sans-serif;
   margin: 0;
   padding: 0;
   color: #333;
-}
-
-header,
-footer {
-  text-align: right;
-  padding: 0.2em 0;
-}
-
-background {
-  z-index: -1;
-  position: fixed;
-  height: -webkit-fill-available;
-  width: -webkit-fill-available;
 }
 
 .portfolio-bg {
@@ -63,21 +50,6 @@ background {
   margin-block-end: 0;
 }
 
-nav ul {
-  list-style: none;
-  padding: 0;
-}
-
-nav ul li {
-  display: inline;
-  margin: 0 10px;
-}
-
-nav ul li a {
-  text-decoration: none;
-  color: #333;
-}
-
 main {
   height: 68vh;
   display: flex;
@@ -92,44 +64,3 @@ main #imported-shape {
   left: 5em;
 }
 
-img {
-  max-width: 100%;
-}
-
-.video-container,
-.audio-container {
-  text-align: center;
-  margin: 20px 0;
-}
-
-form label {
-  margin: 10px 0 5px;
-}
-
-form input,
-form textarea {
-  padding: 10px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-form button {
-  padding: 10px;
-  background-color: #5cb85c;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-form button:hover {
-  background-color: #4cae4c;
-}
-
-@media (max-width: 600px) {
-  nav ul li {
-    display: block;
-    margin: 10px 0;
-  }
-}

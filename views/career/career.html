@@ -4,38 +4,62 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Career Journey</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/views/career/career.css" />
     <script type="module">
-      import { loadHtml } from "./core/framework/index.js";
+      import { importHtml } from "/core/framework/index.js";
+      import { reportComponentActions } from "/components/career/year-report/year-report.js";
 
-      document.addEventListener("DOMContentLoaded", () =>
-        loadHtml("navbar.html", "imported-html"),
-      );
+      importHtml({
+        path: "/assets/svg/career-bg/career-bg.svg",
+        elementId: "importedBg",
+        document: document,
+      });
+
+      importHtml({
+        path: "/components/navbar/navbar.html",
+        elementId: "importedHeader",
+        document: document,
+      });
+
+      const reports = document.querySelectorAll(".year-report");
+
+      const yearsRecords = [
+        { year: 2024, description: "test" },
+        { year: 2025, description: "test" },
+        { year: 2026, description: "test" },
+        { year: 2027, description: "test" },
+        // { year: 2028, description: "test" },
+        // { year: 2029, description: "test" },
+      ];
+
+      reports.forEach((report, index) => {
+        importHtml({
+          path: "/components/career/year-report/year-report.html",
+          elementId: yearsRecords[index].toString(),
+          document: document,
+        });
+      });
+
+      const importedReports = document.querySelectorAll(".year-report");
+
+      importedReports.forEach((report, index) => {
+        reportComponentActions({
+          parent: report,
+          elementsInputProperties: yearsRecords[index],
+        }).applyProperties();
+      });
+
     </script>
   </head>
   <body>
-    <header>
-      <h1>My Career Journey</h1>
-    </header>
-    <main>
-      <h2>Career Timeline</h2>
-      <ul>
-        <li>
-          2024: Graduated with a Bachelor's degree in Computer Science from XYZ
-          University.
-        </li>
-        <li>2025: Joined ABC Tech as a Junior Software Developer.</li>
-        <li>2027: Promoted to Software Developer at ABC Tech.</li>
-        <li>2029: Joined DEF Innovations as a Senior Developer.</li>
-        <li>2032: Became a Lead Developer at DEF Innovations.</li>
-        <li>2033: Started my own tech startup.</li>
-      </ul>
-      <h2>Future Goals</h2>
-      <p>
-        My goal is to lead a successful tech company that innovates and creates
-        impactful solutions for global challenges.
-      </p>
+    <div id="importedBg"></div>
+    <div id="importedHeader"></div>
+    <main class="career-main">
+      <div class="year-report" id="2024"></div>
+      <div class="year-report" id="2025"></div>
+      <div class="year-report" id="2026"></div>
+      <div class="year-report" id="2027"></div>
     </main>
-    <div id="imported-html"></div>
   </body>
 </html>
