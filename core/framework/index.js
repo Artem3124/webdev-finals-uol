@@ -41,11 +41,11 @@ const importHtml = (params = { path, elementId, document, styles, callback }) =>
   });
 };
 
-const elementProcessor = (element, document) => {
+const elementProcessor = (processorParams = { document }) => {
     return {
-        getTotalHeight: () => {
-            const style = document.defaultView.getComputedStyle(element);
-            const height = element.offsetHeight;
+        getTotalHeight: (params = { element }) => {
+            const style = processorParams.document.defaultView.getComputedStyle(params.element);
+            const height = params.element.offsetHeight;
             const paddingTop = parseFloat(style.paddingTop);
             const paddingBottom = parseFloat(style.paddingBottom);
             const marginTop = parseFloat(style.marginTop);
@@ -53,6 +53,10 @@ const elementProcessor = (element, document) => {
 
             return height + paddingTop + paddingBottom + marginTop + marginBottom;
         },
+        shrinkElement: (params = { element, height }) => {
+            params.element.style.maxHeight = `${params.height}px`;
+            params.element.style.overflow = "hidden";
+        }
     };
 };
 

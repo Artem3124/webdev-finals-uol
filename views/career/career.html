@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="/views/career/career.css" />
     <script type="module">
       import { importHtml } from "/core/framework/index.js";
+      import { elementProcessor } from "/core/framework/index.js";
 
       importHtml({
         path: "/assets/svg/career-bg/career-bg.svg",
@@ -82,10 +83,16 @@
             } else {
               console.error("Year row or description row not found");
             }
+
+            elementProcessor({
+              document: document,
+            }).shrinkElement({
+              element: document.getElementById("importedBg"),
+              height: document.body.clientHeight + 200,
+            });
           },
         });
       });
-
     </script>
   </head>
   <body>

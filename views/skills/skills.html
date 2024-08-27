@@ -25,7 +25,6 @@
         elementId: "importedBg",
         document: document,
       });
-
     </script>
     <script type="module" async>
       import { elementProcessor } from "/core/framework/index.js";
@@ -52,21 +51,12 @@
 
       let reportMainSectionsHeight = 400;
 
-      document
-        .querySelectorAll(".report-main-section")
-        .values()
-        .forEach((section) => {
-          reportMainSectionsHeight += elementProcessor(
-            section,
-            document,
-          ).getTotalHeight();
-        });
-
-      console.log(reportMainSectionsHeight);
-
-      document.getElementById("importedBg").style.maxHeight =
-        `${reportMainSectionsHeight}px`;
-      document.getElementById("importedBg").style.overflow = "hidden";
+      elementProcessor({
+        document: document,
+      }).shrinkElement({
+        element: document.getElementById("importedBg"),
+        height: document.body.clientHeight + 400,
+      });
 
       window.onload = async () => {
         await progressBars.forEach(async (bar) => {
