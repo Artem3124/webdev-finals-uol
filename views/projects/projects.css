@@ -1,0 +1,45 @@
+.projects-main {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.projects-main h1 {
+  font-size: 2.5em;
+}
+
+.project {
+  max-width: 60vw;
+}
+
+.project img {
+  width: -webkit-fill-available;
+  border-radius: 25px;
+}
+
+.project h1 {
+  font-size: 2.5em;
+}
+
+.project h2 {
+  font-size: 2em;
+}
+
+.project h3 {
+  font-size: 1.5em;
+}
+
+.project p {
+  font-size: 1.5em;
+}
+
+.project li {
+  font-size: 1.5em;
+}
+
+.project strong {
+  font-size: 1em;
+}

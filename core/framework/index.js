@@ -43,16 +43,6 @@ const importHtml = (params = { path, elementId, document, styles, callback }) =>
 
 const elementProcessor = (processorParams = { document }) => {
     return {
-        getTotalHeight: (params = { element }) => {
-            const style = processorParams.document.defaultView.getComputedStyle(params.element);
-            const height = params.element.offsetHeight;
-            const paddingTop = parseFloat(style.paddingTop);
-            const paddingBottom = parseFloat(style.paddingBottom);
-            const marginTop = parseFloat(style.marginTop);
-            const marginBottom = parseFloat(style.marginBottom);
-
-            return height + paddingTop + paddingBottom + marginTop + marginBottom;
-        },
         shrinkElement: (params = { element, height }) => {
             params.element.style.maxHeight = `${params.height}px`;
             params.element.style.overflow = "hidden";
