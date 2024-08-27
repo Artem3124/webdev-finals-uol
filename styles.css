@@ -50,14 +50,14 @@ body {
   margin-block-end: 0;
 }
 
-main {
+.index-main {
   height: 68vh;
   display: flex;
   justify-content: flex-start;
   padding: 20px;
 }
 
-main #imported-shape {
+.index-main #imported-shape {
   width: 46em;
   position: absolute;
   bottom: 1em;

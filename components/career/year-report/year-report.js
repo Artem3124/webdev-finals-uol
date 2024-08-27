@@ -1,12 +1,15 @@
-
 const reportComponent = () => {
   return {
     applyProperties: async (params = { parent, elementsInputProperties }) => {
-      // const {
-      //   parent,
-      //   elementsInputProperties = elementsInputProperties ??
-      //     console.error("Elements input properties are required"),
-      // } = par
+      console.assert(params.parent, "parent is required");
+      console.assert(
+        params.elementsInputProperties.hasOwnProperty("year"),
+        "year field of elementsInputProperties is required",
+      );
+      console.assert(
+        params.elementsInputProperties.hasOwnProperty("description"),
+        "description field of elementsInputProperties is required",
+      );
 
       console.log(params.parent);
       console.log(params.elementsInputProperties);
@@ -18,7 +21,9 @@ const reportComponent = () => {
 
       const descriptionSectionElement =
         parent.querySelector(".description-row");
-      descriptionSectionElement.prepend(params.elementsInputProperties.description);
+      descriptionSectionElement.prepend(
+        params.elementsInputProperties.description,
+      );
 
       return;
     },

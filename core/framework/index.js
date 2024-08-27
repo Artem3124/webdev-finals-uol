@@ -6,11 +6,15 @@ const importHtml = (params = { path, elementId, document, styles, callback }) =>
     styles = null,
     callback = null,
   } = params;
+
   params.document.addEventListener("DOMContentLoaded", () => {
     fetch(params.path)
       .then((response) => response.text())
       .then((data) => {
         const element = params.document.getElementById(params.elementId);
+
+        console.assert(element, `Element with id ${params.elementId} not found`);
+
         element.innerHTML = data;
         Object.assign(element.style, params.styles);
 

@@ -1,8 +1,16 @@
 .career-main {
   display: flex;
-  justify-content: space-evenly;
   padding: 20px;
   flex-wrap: wrap;
   flex-direction: column;
   align-content: center;
+  justify-content: center;
+}
+
+.career-header h1 {
+    font-size: 3.5em;
+}
+
+.year-report {
+    margin-bottom: 6em;
 }

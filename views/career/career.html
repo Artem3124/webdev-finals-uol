@@ -4,7 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Career Journey</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=K2D:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/font.css" />
     <link rel="stylesheet" href="/views/career/career.css" />
     <script type="module">
       import { importHtml } from "/core/framework/index.js";
@@ -24,12 +29,41 @@
       const reports = document.querySelectorAll(".year-report");
 
       const yearsRecords = [
-        { year: 2024, description: "test" },
-        { year: 2025, description: "test" },
-        { year: 2026, description: "test" },
-        { year: 2027, description: "test" },
-        // { year: 2028, description: "test" },
-        // { year: 2029, description: "test" },
+        {
+          year: 2034,
+          description:
+            "Founded my own tech startup, focusing on developing AI-driven cloud solutions for real-world problems. As the CEO and Lead Architect, I aim to build a company that pushes the boundaries of technology while fostering a culture of creativity and collaboration.",
+        },
+        {
+          year: 2032,
+          description:
+            "Joined DEF Innovations as a Principal Engineer, where I focused on integrating advanced AI solutions with cloud infrastructure to create innovative products and services. Collaborated with cross-functional teams to drive innovation.",
+        },
+        {
+          year: 2030,
+          description:
+            "Transitioned to a role as a Tech Lead, overseeing multiple projects and ensuring the adoption of best practices in software development. Mentored junior developers and contributed to the company’s strategic technical decisions.",
+        },
+        {
+          year: 2028,
+          description:
+            "Promoted to Senior Software Engineer at qmBase. Led a team of developers and played a key role in designing and implementing scalable software solutions. Continued to enhance my skills in full-stack development, cloud computing, and AI.",
+        },
+        {
+          year: 2024,
+          description:
+            "Landed a full-time position as a Juniour Software Engineer at qmBase, focusing on .NET and React. In this role, I have been responsible for developing robust web applications and contributing to large-scale software projects.",
+        },
+        {
+          year: 2023,
+          description:
+            "Interned as a Fullstack Developer at Sigma Software, where I worked with .NET and React.",
+        },
+        {
+          year: 2022,
+          description:
+            "Contributed to open-source projects and participated in competitive programming challenges like Advent of Code. Solved 60 problems on LeetCode, which helped strengthen my problem-solving skills. Completed a few small projects, such as a FAQ filter, which helped me gain practical experience in software development.",
+        },
       ];
 
       yearsRecords.forEach((record) => {
@@ -52,52 +86,22 @@
         });
       });
 
-      // reports.forEach((report, index) => {
-      //   importHtml({
-      //     path: "/components/career/year-report/year-report.html",
-      //     elementId: yearsRecords[index].year.toString(),
-      //     document: document,
-      //     callback: () => {
-      //       const report = document.getElementById(yearsRecords[index].year.toString());
-      //       const yearRow = report.querySelector(".year-row");
-      //       const descriptionRow = report.querySelector(".description-row");
-
-      //       if (yearRow && descriptionRow) {
-      //         yearRow.prepend(record.year);
-      //         descriptionRow.prepend(record.description);
-      //       } else {
-      //         console.error("Year row or description row not found");
-      //       }
-      //     },
-      //   });
-      // });
     </script>
-    <!-- <script type="text/javascript"> -->
-    <!--   let yearsRecords = [ -->
-    <!--     { year: 2024, description: "test" }, -->
-    <!--     { year: 2025, description: "test" }, -->
-    <!--     { year: 2026, description: "test" }, -->
-    <!--     { year: 2027, description: "test" }, -->
-    <!--   ]; -->
-
-    <!--   document.querySelectorAll(".year-report").forEach((report, index) => { -->
-    <!--     console.log(report); -->
-    <!--     console.log(report.querySelector(".year-row")); -->
-    <!--     report.querySelector(".year-row").prepend(yearsRecords[index].year); -->
-    <!--     report -->
-    <!--       .querySelector(".description-row") -->
-    <!--       .prepend(yearsRecords[index].description); -->
-    <!--   }); -->
-    <!-- </script> -->
   </head>
   <body>
     <div id="importedBg"></div>
     <div id="importedHeader"></div>
     <main class="career-main">
+      <div class="career-header">
+        <h1 class="k2d-semibold">Career Timeline</h1>
+      </div>
+      <div class="year-report" id="2034"></div>
+      <div class="year-report" id="2032"></div>
+      <div class="year-report" id="2030"></div>
+      <div class="year-report" id="2028"></div>
       <div class="year-report" id="2024"></div>
-      <div class="year-report" id="2025"></div>
-      <div class="year-report" id="2026"></div>
-      <div class="year-report" id="2027"></div>
+      <div class="year-report" id="2023"></div>
+      <div class="year-report" id="2022"></div>
     </main>
   </body>
 </html>
