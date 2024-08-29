@@ -19,227 +19,218 @@
         elementId: "importedHeader",
         document: document,
       });
-
     </script>
     <style>
       body {
-          background: url("/assets/svg/skills-bg/skills-bg.svg") no-repeat;
-          background-size: cover;
-          background-attachment: fixed;
+        background: url("/assets/svg/skills-bg/skills-bg.svg") no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
       }
+
+      main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem;
+      }
+
+      .page-header { 
+        text-align: right;
+        margin-right: 8em;
+      }
+
+      section {
+        max-width: 60vw;
+      }
+
+      p { 
+          font-size: 1.2rem;
+      }
+
+      h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+
+      h1 {
+        font-size: 3rem;
+        margin-bottom: 2rem;
+      }
+
+      li {
+        margin-bottom: 0.5rem;
+      }
+
+      ol, ul {
+        margin-left: 2rem;
+      }
+
     </style>
-    <script type="module" async>
-      import { elementProcessor } from "/core/framework/index.js";
-      import { progressBar } from "/services/progressBar.js";
-
-      let progresses = [
-        45, 40, 37, 22, 18, 17, 15, 8, 40, 20, 17, 45, 32, 25, 15, 40, 37, 25,
-        20, 40, 35, 14,
-      ];
-
-      let bars = document.querySelectorAll(".progress-bar");
-      let progressBars = [];
-
-      let importedBars = bars.values().forEach((bar, index) => {
-        let progressBarModel = progressBar({
-          element: bar,
-          initialValue: 1,
-          maxValue: progresses[index],
-          speed: 2.5,
-        });
-        progressBars.push(progressBarModel);
-        return index;
-      });
-
-      let reportMainSectionsHeight = 400;
-
-      elementProcessor({
-        document: document,
-      }).shrinkElement({
-        element: document.getElementById("importedBg"),
-        height: document.body.clientHeight + 400,
-      });
-
-      window.onload = async () => {
-        await progressBars.forEach(async (bar) => {
-          await bar.move();
-        });
-      };
-    </script>
+    <script type="module" async></script>
   </head>
 
   <body>
     <div id="importedHeader"></div>
-    <section class="report-main">
-      <h2 class="skills-header">
-        <span class="k2d-regular">Languages</span>
-      </h2>
-      <div class="skills">
-        <div class="skills-wrap">
-          <div class="cs-stats progress-bar" id="csBar"></div>
-          <div class="progress-description k2d-light">
-            <h3 class="header">C#</h3>
-            <div class="vertical-line"></div>
-          </div>
-        </div>
 
-        <div class="skills-wrap">
-          <div class="js-stats progress-bar" id="jsBar"></div>
-          <div class="progress-description k2d-light">
-            <h3 class="header">JavaScript</h3>
-            <div class="vertical-line"></div>
-          </div>
-        </div>
+    <header class="page-header">
+      <h1>Artem Zhukovskyi</h1>
+      <p>Portfolio Website Development Report</p>
+    </header>
 
-        <div class="skills-wrap">
-          <div class="ts-stats progress-bar" id="tsBar"></div>
-          <div class="progress-description k2d-light">
-            <h3 class="header">TypeScript</h3>
-            <div class="vertical-line"></div>
-          </div>
-        </div>
+    <main>
+      <section id="introduction">
+        <h2>Introduction</h2>
+        <p>
+            This report details the development process of my portfolio website.
+            It covers the design, features, and web site architecture. I implemented 
+            curious features to moke the website scalable and extensible.
+        </p>
+      </section>
 
-        <div class="skills-wrap">
-          <div class="py-stats progress-bar" id="pyBar"></div>
-          <div class="progress-description k2d-light">
-            <h3 class="header">Python</h3>
-            <div class="vertical-line"></div>
-          </div>
-        </div>
+      <section id="inspiration">
+        <h2>Inspiration</h2>
+        <p>
+        I wasn't inspired by any web site portfolios. I have been creating the design and different features
+        based on my own vision and 2 years of experience in web development. 
 
-        <div class="skills-wrap">
-          <div class="bash-stats progress-bar" id="bashBar"></div>
-          <div class="progress-description k2d-light">
-            <h3 class="header">Bash</h3>
-            <div class="vertical-line"></div>
-          </div>
-        </div>
+        I understood that basically I need a navigation bar, and tabs for different sections. With the help of which user can be 
+        redirected to the desired section. 
 
-        <div class="skills-wrap">
-          <div class="cpp-stats progress-bar" id="cppBar"></div>
-          <div class="progress-description k2d-light">
-            <h3 class="header">C++</h3>
-            <div class="vertical-line"></div>
-          </div>
-        </div>
+        Therefore it was my starting point in the development of the website.
+      </section>
 
-        <div class="skills-wrap">
-          <div class="sql-stats progress-bar" id="sqlBar"></div>
-          <div class="progress-description k2d-light">
-            <h3 class="header">SQL</h3>
-            <div class="vertical-line"></div>
-          </div>
-        </div>
+      <section id="accessibility">
+        <h2>Accessibility</h2>
+        <p>To ensure accessibility, I implemented the following features:</p>
+        <ul>
+          <li>
+            <strong>Alternative Text for Images:</strong> All images include
+            descriptive alt text, ensuring that screen readers can accurately
+            convey the content of the images to visually impaired users.
 
-        <div class="skills-wrap">
-          <div class="go-stats progress-bar" id="goBar"></div>
-          <div class="progress-description k2d-light">
-            <h3 class="header">Go</h3>
-            <div class="vertical-line"></div>
-          </div>
-        </div>
-      </div>
-    </section>
+            <img src="/assets/img/alternative-text-evidence.png">
+          </li>
+        </ul>
+      </section>
 
-    <section class="report-main-section">
-      <h2 class="skills-header">
-        <span class="k2d-regular">Tools</span>
-      </h2>
-      <div class="skills">
-        <div class="skills-wrap">
-          <div class="git-stats progress-bar" id="gitBar"></div>
-          <div class="progress-description k2d-light">
-            <h3 class="header">Git</h3>
-            <div class="vertical-line"></div>
-          </div>
-        </div>
+      <section id="usability">
+        <h2>Usability</h2>
+        <p>I considered usability in the following ways:</p>
+        <ul>
+          <li>
+            <strong>Intuitive Navigation:</strong> The site’s navigation is
+            straightforward, with clearly labeled links and a consistent
+            structure throughout the pages.
+          </li>
+          <li>
+            <strong>Responsive Design:</strong> The site automatically adjusts
+            to fit different screen sizes, ensuring that it is user-friendly on
+            desktops, tablets, and smartphones.
+          </li>
+        </ul>
+      </section>
 
-        <div class="skills-wrap">
-          <div class="docker-stats progress-bar" id="dockerBar"></div>
-          <div class="progress-description k2d-light">
-            <h3 class="header">Docker</h3>
-            <div class="vertical-line"></div>
-          </div>
-        </div>
+      <section id="learning">
+        <h2>Learning</h2>
+        <p>
+          Three key things I had to learn or find out to create my site were:
+        </p>
+        <ul>
+          <li>
+            <strong>JS Models and proporties in Browser environment</strong> 
+            I learned how to use JS modules and their differences from "text/javascript" scripts.
+            I dig into the browser environment and learned how to maniplate the DOM. I learned how to use different events and how to handle them.
+          </li>
+          <li>
+            <strong>HTML Tags and its proporties</strong> 
+            Also script tags async and defer were new to me. I learned different html tags I never ever used before and familiarized myself with their properties.
+          </li>
+          <li>
+            <strong>Time, efforts, and feature importance and management</strong> 
+            Apart from the technical part, I learned how to manage my time and not to spend too much time on the feature that is not so 
+            important right now. I learned how to not deep dive and focus on the one feature, but to create an overall picture of the website and 
+            return to the feature later on, if I would have enough time for that.
+          </li>
+        </ul>
+      </section>
 
-        <div class="skills-wrap">
-          <div class="azure-stats progress-bar" id="azureBar"></div>
-          <div class="progress-description k2d-light">
-            <h3 class="header">Azure</h3>
-            <div class="vertical-line"></div>
-          </div>
-        </div>
-      </div>
-    </section>
+      <section id="evaluation1">
+        <h2>Evaluation I</h2>
+        <p>I believe the most successful aspects of my work include:</p>
+        <ul>
+          <li>
+            <strong>Clean and Modern Design:</strong> The overall aesthetic is
+            clean and modern, which aligns with current design trends and makes
+            the site visually appealing.
+          </li>
+          <li>
+            <strong>Responsive Layout:</strong> The site’s ability to adapt to
+            different devices without compromising the user experience is a
+            major success.
+          </li>
+          <li>
+            <strong>The possility to furter easily extend the website</strong> 
+            I wrote my small framework based on fetch API. It allows me to easily import html files to other html files. Not only that, but the import function 
+            allows me to pass the script that will be executed after the html file is mounted to the DOM.
+          </li>
+        </ul>
+      </section>
 
-    <section class="report-main-section">
-      <h2 class="skills-header">
-        <span class="k2d-regular">Frameworks and Libraries</span>
-      </h2>
-      <div class="skills">
-        <div class="skills-wrap">
-          <div class="dotnet-stats progress-bar" id="netCoreBar"></div>
-          <div class="progress-description k2d-light">
-            <h3 class="header">.NET Core</h3>
-            <div class="vertical-line"></div>
-          </div>
-        </div>
+      <section id="evaluation2">
+        <h2>Evaluation II</h2>
+        <p>Areas for improvement include:</p>
+        <ul>
+          <li>
+            <strong>Refactoring</strong>
+            JavaScript is well known as a language of anarchists. Because of its flexibility, it is very easy to mess up the code, while hitting the deadlines.
+            I need to deeply refactor the code and restructurize it. A lot of things can be improved and polished.
+          </li>
+          <li>
+            <strong>Advanced Interactivity:</strong> I could explore more
+            advanced interactivity, such as adding dynamic elements using
+            JavaScript to improve user engagement.
+          </li>
+          <li>
+            <strong>Animated and interactive background</strong> 
+            Initially I wanted to create animated gradient blobs at the background. But I decided to postpone this feature for the future. And I want to find an elegant and optimized way
+            how to mock physically realistical blobs.
+          </li>
+        </ul>
+      </section>
 
-        <div class="skills-wrap">
-          <div class="angular-stats progress-bar" id="angularBar"></div>
-          <div class="progress-description k2d-light">
-            <h3 class="header">Angular</h3>
-            <div class="vertical-line"></div>
-          </div>
-        </div>
+      <section id="resources">
+        <h2>Resources</h2>
+        <p>
+          The following resources were used in the development of this site:
+        </p>
+        <ul>
+          <li>
+            <strong>HTML & CSS Tutorials:</strong> 
+            MDN Web Docs and W3Schools were invaluable resources for learning
+            <a href="https://developer.mozilla.org/">MDN Web Docs</a>
+            <a href="https://www.w3schools.com/html/">W3Schools</a>
+          </li>
+          <li>
+            <strong>StackOverflow Articles</strong> 
+            <a href="https://stackoverflow.com/questions/69860799/is-there-a-way-to-import-html-from-my-project-files-directly-into-my-working-htm">
+                Answer that helped me to import html files
+            </a>
+          </li>
+        </ul>
+      </section>
 
-        <div class="skills-wrap">
-          <div class="vue-stats progress-bar" id="vueBar"></div>
-          <div class="progress-description k2d-light">
-            <h3 class="header">Vue</h3>
-            <div class="vertical-line"></div>
-          </div>
-        </div>
+      <section id="appendices">
+        <h2>Appendices</h2>
+        <h3>Site Map</h3>
+        <img src="sitemap.png" alt="Site Map" />
+        <h3>Wireframes and Mock-ups</h3>
+        <img src="wireframe.png" alt="Wireframe" />
+        <img src="mockup.png" alt="Mock-up" />
+      </section>
+    </main>
 
-        <div class="skills-wrap">
-          <div class="react-stats progress-bar" id="reactBar"></div>
-          <div class="progress-description k2d-light">
-            <h3 class="header">React</h3>
-            <div class="vertical-line"></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="report-main-section">
-      <h2 class="skills-header">
-        <span class="k2d-regular">Operating Systems</span>
-      </h2>
-      <div class="skills">
-        <div class="skills-wrap">
-          <div class="windows-stats progress-bar" id="windowsBar"></div>
-          <div class="progress-description k2d-light">
-            <h3 class="header">Windows</h3>
-            <div class="vertical-line"></div>
-          </div>
-        </div>
-
-        <div class="skills-wrap">
-          <div class="arch-stats progress-bar" id="archBar"></div>
-          <div class="progress-description k2d-light">
-            <h3 class="header">Arch Linux</h3>
-            <div class="vertical-line"></div>
-          </div>
-        </div>
-
-        <div class="skills-wrap">
-          <div class="debian-stats progress-bar" id="debianBar"></div>
-          <div class="progress-description k2d-light">
-            <h3 class="header">Debian</h3>
-            <div class="vertical-line"></div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <footer>
+      <p>&copy; 2024 Artem Zhukovskyi. All rights reserved.</p>
+    </footer>
   </body>
 </html>

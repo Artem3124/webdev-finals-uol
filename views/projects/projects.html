@@ -27,13 +27,6 @@
         elementId: "importedHeader",
         document: document,
       });
-
-      // elementProcessor({
-      //   document: document,
-      // }).shrinkElement({
-      //   element: document.getElementById("importedBg"),
-      //   height: document.body.clientHeight + 200,
-      // });
     </script>
   </head>
   <body>
@@ -53,7 +46,23 @@
 
         <img
           src="/assets/img/webscraper.png"
-          alt="Web Scraper"
+          alt="The image is a diagram representing a system architecture for processing web content. Here’s a detailed description:
+              1.	API Entry Points:
+              •	On the left, a box labeled “Any API entry point” lists possible entry points: Webapp, Desktop, and Mobile. These are written in blue text, indicating hyperlinks.
+              2.	CLI:
+              •	The API entry points lead to a box labeled “CLI,” which connects with several other components.
+              3.	HTML Parser:
+              •	The “CLI” connects to an “HTML parser,” which interacts with several components in the system.
+              4.	Graph Resolver:
+              •	A “Graph Resolver” module is linked to the HTML parser and is responsible for resolving graph cycling.
+              5.	URL Extractor:
+              •	The “HTML parser” also connects to a “URL Extractor,” which is tasked with disassembling pages into building blocks and extracting URLs from web pages.
+              6.	Databases:
+              •	The URL Extractor outputs to a “NoSQL Document DB.”
+              •	A “SQL/NoSQL? URL Queue” connects back to the HTML parser, indicating a decision or question regarding the type of database to use for the URL queue.
+              7.	Additional Information:
+              •	Below the main diagram, there is an area with handwritten notes labeled “Service,” “Database,” and “Cache,” each in different colors.
+              •	There is a “P.S.” note at the bottom-right, mentioning that services are intended to be modules following the ISO/IEC/IEEE 24765:2010 standard, relating to systems and software engineering vocabulary."
           class="diagram"
         />
 
@@ -124,7 +133,28 @@
           to update documentation and fix existing shell scripts.
         </p>
 
-        <img src="/assets/img/querymodel.jpg" alt="ML Pipeline" class="diagram" />
+        <img
+          src="/assets/img/querymodel.jpg"
+          alt="	1.	Title:
+              •	The title at the top reads “Querying the model.”
+              2.	User Query:
+              •	At the center top of the diagram is a box labeled “User Query,” representing the initial input from the user.
+              3.	Named Entity Recognition:
+              •	To the left, the user query is passed into a “Named Entity Recognition” (NER) module, which identifies key entities in the query.
+              4.	Embedding Model:
+              •	The user query is also sent to an “Embedding Model,” which transforms the query into a vector representation.
+              5.	Vector Database:
+              •	The vector output from the embedding model is used to interact with a “Vector Database” at the bottom left of the diagram.
+              6.	Filter and Filtered Database:
+              •	The vector database connects to a “Filter” module, which then outputs to a “Filtered Database.”
+              7.	Context Results:
+              •	The filtered database provides “Context Results,” which are sent to a “Prompt” module.
+              8.	Prompt:
+              •	The prompt module is responsible for forming a query for the LLM (Large Language Model). It instructs, “Answer the Query. Only use Context to construct the answer.”
+              9.	LLM and UI:
+              •	The prompt is sent to the “LLM” (Large Language Model), which generates an answer. The answer is then sent to the “UI” (User Interface), where it is presented to the user."
+          class="diagram"
+        />
 
         <h3 class="k2d-semibold">Key Features:</h3>
         <ul>
