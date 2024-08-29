@@ -12,6 +12,13 @@
     <title>Welcome to My Future Self</title>
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="font.css" />
+    <style type="text/css">
+      body {
+        background: url("./assets/svg/main-bg/main-bg.svg") no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+      }
+    </style>
     <script type="module">
       import { importHtml } from "./core/framework/index.js";
 
@@ -20,16 +27,13 @@
         elementId: "imported-html",
         document: document,
       });
-      importHtml({
-        path: "./assets/svg/main-bg/main-bg.svg",
-        elementId: "imported-bg",
-        document: document,
-      });
+
       importHtml({
         path: "./assets/svg/main-portfolio/photo-bg.svg",
         elementId: "porfolio-bg",
         document: document,
       });
+
       importHtml({
         path: "./assets/svg/main-shape/shape.svg",
         elementId: "imported-shape",
@@ -38,19 +42,18 @@
     </script>
   </head>
   <body>
-    <div id="imported-bg"></div>
     <div id="imported-html"></div>
     <main class="index-main">
-        <div id="porfolio-bg" class="portfolio-bg"></div>
-        <section class="intro">
-            <div class="intro-text">
-                <h1 class="k2d-semibold">I’m Artem Zhukovskyi</h1>
-                <h2 class="k2d-extralight">Software Developer</h2>
-                <p>focused on Web-technologies.</p>
-            </div>
-            <img src="./assets/img/profile.png" alt="avatar" class="avatar" />
-        </section>
-        <div id="imported-shape" class="shape"></div>
+      <div id="porfolio-bg" class="portfolio-bg"></div>
+      <section class="intro">
+        <div class="intro-text">
+          <h1 class="k2d-semibold">I’m Artem Zhukovskyi</h1>
+          <h2 class="k2d-extralight">Software Developer</h2>
+          <p>focused on Web-technologies.</p>
+        </div>
+        <img src="./assets/img/profile.png" alt="avatar" class="avatar" />
+      </section>
+      <div id="imported-shape" class="shape"></div>
     </main>
   </body>
 </html>

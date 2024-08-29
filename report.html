@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Skills and Expertise</title>
+    <title>Report</title>
     <link rel="stylesheet" href="/styles.css" />
     <link rel="stylesheet" href="/views/skills/styles.css" />
     <link
@@ -21,6 +21,13 @@
       });
 
     </script>
+    <style>
+      body {
+          background: url("/assets/svg/skills-bg/skills-bg.svg") no-repeat;
+          background-size: cover;
+          background-attachment: fixed;
+      }
+    </style>
     <script type="module" async>
       import { elementProcessor } from "/core/framework/index.js";
       import { progressBar } from "/services/progressBar.js";
@@ -46,12 +53,12 @@
 
       let reportMainSectionsHeight = 400;
 
-      // elementProcessor({
-      //   document: document,
-      // }).shrinkElement({
-      //   element: document.getElementById("importedBg"),
-      //   height: document.body.clientHeight + 400,
-      // });
+      elementProcessor({
+        document: document,
+      }).shrinkElement({
+        element: document.getElementById("importedBg"),
+        height: document.body.clientHeight + 400,
+      });
 
       window.onload = async () => {
         await progressBars.forEach(async (bar) => {
@@ -63,8 +70,7 @@
 
   <body>
     <div id="importedHeader"></div>
-
-    <section class="report-main-section">
+    <section class="report-main">
       <h2 class="skills-header">
         <span class="k2d-regular">Languages</span>
       </h2>

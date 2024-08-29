@@ -12,6 +12,13 @@
       rel="stylesheet"
     />
     <script type="module" src="/views/contact/contact.js" async></script>
+    <style type="text/css">
+      body {
+        background: url("/assets/svg/contact-bg/contact-bg.svg") no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+      }
+    </style>
     <script type="module" defer>
       import { importHtml } from "/core/framework/index.js";
 
@@ -21,16 +28,10 @@
         document: document,
       });
 
-      importHtml({
-        path: "/assets/svg/contact-bg/contact-bg.svg",
-        elementId: "importedBg",
-        document: document,
-      });
     </script>
   </head>
   <body>
     <div id="importedHeader"></div>
-    <div id="importedBg"></div>
     <main class="contact-main">
       <h2 class="k2d-semibold mt-1">Feel free to reach me out!</h2>
       <form

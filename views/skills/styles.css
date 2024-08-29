@@ -1,3 +1,9 @@
+body {
+    background-image: url("/assets/svg/skills-bg/skills-bg.svg");
+    background-size: cover;
+    background-attachment: fixed;
+}
+
 .report-main-section {
   display: flex;
   flex-direction: column;
