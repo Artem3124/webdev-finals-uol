@@ -1,17 +1,27 @@
-<!doctype html>
 <html lang="en">
   <head>
+    <!-- Meta tags to define the character set and make the page responsive -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- The title of the page that appears on the browser tab -->
     <title>Get in Touch</title>
+    
+    <!-- Linking external CSS for styling and fonts -->
     <link rel="stylesheet" href="/styles.css" />
     <link rel="stylesheet" href="/font.css" />
     <link rel="stylesheet" href="/views/contact/contact.css" />
+    
+    <!-- Google Fonts: K2D font family used for text styling -->
     <link
       href="https://fonts.googleapis.com/css2?family=K2D:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Async loading of external JavaScript file for contact-specific functionality -->
     <script type="module" src="/views/contact/contact.js" async></script>
+
+    <!-- Inline CSS for setting a background image -->
     <style type="text/css">
       body {
         background: url("/assets/svg/contact-bg/contact-bg.svg") no-repeat;
@@ -19,28 +29,38 @@
         background-attachment: fixed;
       }
     </style>
+
+    <!-- JavaScript for importing and rendering external HTML components, such as the navbar -->
     <script type="module" defer>
       import { importHtml } from "/core/framework/index.js";
 
+      // Dynamically import the navbar and insert it into the DOM where the id is 'importedHeader'
       importHtml({
         path: "/components/navbar/navbar.html",
         elementId: "importedHeader",
         document: document,
       });
-
     </script>
   </head>
+  
   <body>
+    <!-- Navbar is imported dynamically and rendered here -->
     <div id="importedHeader"></div>
+    
+    <!-- Main section of the page, containing the contact form -->
     <main class="contact-main">
+      <!-- A header that invites users to get in touch -->
       <h2 class="k2d-semibold mt-1">Feel free to reach me out!</h2>
+
+      <!-- Contact form: the user fills in this form and submits it via email -->
       <form
         id="contact-form"
-        action="mailto:mr.zhukovsky02@gmail.com"
-        method="post"
-        enctype="text/plain"
+        action="mailto:mr.zhukovsky02@gmail.com" 
+        method="post"                            
+        enctype="text/plain"                     
         class="k2d-regular"
       >
+        <!-- Input field for the user's name -->
         <input
           class="mb-1 mt-4"
           id="input-field-sm"
@@ -48,8 +68,9 @@
           id="name"
           name="name"
           placeholder="Your Name"
-          required
-        />
+          required                                     />
+        
+        <!-- Input field for the user's email address -->
         <input
           class="mb-1"
           id="input-field-sm"
@@ -57,17 +78,22 @@
           id="email"
           name="email"
           placeholder="Your Email"
-          required
-        />
+          required                                       />
+        
+        <!-- Text area for the user's message -->
         <textarea
           class="mb-1"
           id="text-field"
           name="message"
           placeholder="Your message please"
-          required
-        ></textarea>
+          required                                       ></textarea>
+        
+        <!-- Button section for sending and clearing the form -->
         <div class="button-wrap">
-            <button class="k2d-light" type="button" onclick="resetForm(document.getElementById('contact-form'))">Clear</button>
+          <!-- Clear button: triggers a form reset function when clicked -->
+          <button class="k2d-light" type="button" onclick="resetForm(document.getElementById('contact-form'))">Clear</button>
+          
+          <!-- Submit button: sends the form when clicked -->
           <button class="k2d-light" type="submit">Send</button>
         </div>
       </form>

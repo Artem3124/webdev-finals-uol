@@ -1,17 +1,28 @@
 <!doctype html>
 <html lang="en-US">
   <head>
+    <!-- Meta information for character encoding, viewport settings, and preconnecting to external fonts -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Preconnect to Google Fonts for faster loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Link to Google Fonts: K2D family -->
     <link
       href="https://fonts.googleapis.com/css2?family=K2D:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Page title -->
     <title>Welcome to My Future Self</title>
+
+    <!-- External CSS for general styles and fonts -->
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="font.css" />
+
+    <!-- Inline styling for body background -->
     <style type="text/css">
       body {
         background: url("./assets/svg/main-bg/main-bg.svg") no-repeat;
@@ -19,21 +30,26 @@
         background-attachment: fixed;
       }
     </style>
+
+    <!-- JavaScript module for dynamically importing external HTML and SVG elements -->
     <script type="module">
       import { importHtml } from "./core/framework/index.js";
 
+      // Import navbar into the div with id="imported-html"
       importHtml({
         path: "./components/navbar/navbar.html",
         elementId: "imported-html",
         document: document,
       });
 
+      // Import portfolio background into the div with id="porfolio-bg"
       importHtml({
         path: "./assets/svg/main-portfolio/photo-bg.svg",
         elementId: "porfolio-bg",
         document: document,
       });
 
+      // Import a decorative shape SVG into the div with id="imported-shape"
       importHtml({
         path: "./assets/svg/main-shape/shape.svg",
         elementId: "imported-shape",
@@ -41,18 +57,29 @@
       });
     </script>
   </head>
+
   <body>
+    <!-- Dynamically loaded navbar HTML will be inserted here -->
     <div id="imported-html"></div>
+
+    <!-- Main content area -->
     <main class="index-main">
+      <!-- Dynamically loaded portfolio background -->
       <div id="porfolio-bg" class="portfolio-bg"></div>
+
+      <!-- Introduction section -->
       <section class="intro">
         <div class="intro-text">
           <h1 class="k2d-semibold">I’m Artem Zhukovskyi</h1>
           <h2 class="k2d-extralight">Software Developer</h2>
           <p>focused on Web-technologies.</p>
         </div>
+
+        <!-- Profile image (avatar) -->
         <img src="./assets/img/profile.png" alt="avatar" class="avatar" />
       </section>
+
+      <!-- Dynamically loaded shape SVG -->
       <div id="imported-shape" class="shape"></div>
     </main>
   </body>

@@ -1,16 +1,25 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- Meta Tags: Defining the document's encoding and making it responsive -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Title of the page to appear in the browser tab -->
     <title>My Career Journey</title>
+    
+    <!-- Linking to Google Fonts: K2D font family used for styling the text -->
     <link
       href="https://fonts.googleapis.com/css2?family=K2D:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
       rel="stylesheet"
     />
+    
+    <!-- Linking external CSS files for styling -->
     <link rel="stylesheet" href="/styles.css" />
     <link rel="stylesheet" href="/font.css" />
     <link rel="stylesheet" href="/views/career/career.css" />
+
+    <!-- Inline CSS: Sets a background image for the body element -->
     <style type="text/css">
       body {
         background: url("/assets/svg/career-bg/career-bg.svg") no-repeat;
@@ -18,18 +27,24 @@
         background-attachment: scroll;
       }
     </style>
+
+    <!-- JavaScript module: Loads external components and dynamically injects content -->
     <script type="module">
+      // Importing utility functions to handle HTML component imports and element processing
       import { importHtml } from "/core/framework/index.js";
       import { elementProcessor } from "/core/framework/index.js";
 
+      // Loading the navbar component and inserting it into the DOM element with id="importedHeader"
       importHtml({
         path: "/components/navbar/navbar.html",
         elementId: "importedHeader",
         document: document,
       });
 
+      // Selecting all elements that will hold career year reports (dynamically generated)
       const reports = document.querySelectorAll(".year-report");
 
+      // Array of career milestones (year and description)
       const yearsRecords = [
         {
           year: 2034,
@@ -54,7 +69,7 @@
         {
           year: 2024,
           description:
-            "Landed a full-time position as a Juniour Software Engineer at qmBase, focusing on .NET and React. In this role, I have been responsible for developing robust web applications and contributing to large-scale software projects.",
+            "Landed a full-time position as a Junior Software Engineer at qmBase, focusing on .NET and React. In this role, I have been responsible for developing robust web applications and contributing to large-scale software projects.",
         },
         {
           year: 2023,
@@ -68,23 +83,27 @@
         },
       ];
 
+      // Loop through each career milestone and dynamically load the corresponding HTML component
       yearsRecords.forEach((record) => {
         importHtml({
           path: "/components/career/year-report/year-report.html",
-          elementId: record.year.toString(),
+          elementId: record.year.toString(), // Element ID matches the year (e.g., '2034')
           document: document,
           callback: function () {
+            // Once the HTML is loaded, populate the year and description
             const report = document.getElementById(record.year.toString());
             const yearRow = report.querySelector(".year-row");
             const descriptionRow = report.querySelector(".description-row");
 
             if (yearRow && descriptionRow) {
+              // Insert the year and description into the respective HTML elements
               yearRow.prepend(record.year);
               descriptionRow.prepend(record.description);
             } else {
               console.error("Year row or description row not found");
             }
 
+            // Optional functionality for shrinking elements based on viewport size (currently commented out)
             // elementProcessor({
             //   document: document,
             // }).shrinkElement({
@@ -96,12 +115,19 @@
       });
     </script>
   </head>
+
   <body>
+    <!-- Navbar gets dynamically imported here -->
     <div id="importedHeader"></div>
+
+    <!-- Main content area -->
     <main class="career-main">
+      <!-- Header section for the career timeline -->
       <div class="career-header">
         <h1 class="k2d-semibold">Career Timeline</h1>
       </div>
+
+      <!-- Year report placeholders (these will be dynamically populated with data from the script) -->
       <div class="year-report" id="2034"></div>
       <div class="year-report" id="2032"></div>
       <div class="year-report" id="2030"></div>

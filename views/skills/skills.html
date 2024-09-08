@@ -1,51 +1,63 @@
 <!doctype html>
+<!-- The doctype declaration defines this document as HTML5 -->
 <html lang="en">
+  <!-- Sets the language of the document to English -->
   <head>
+    <!-- Meta tag defining the character encoding as UTF-8 -->
     <meta charset="UTF-8" />
+    <!-- Meta tag making the website responsive to different screen sizes -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Title of the webpage as it will appear in the browser tab -->
     <title>Skills and Expertise</title>
+    <!-- Link to an external CSS stylesheet for global styles -->
     <link rel="stylesheet" href="/styles.css" />
+    <!-- Link to a specific CSS file for the skills section -->
     <link rel="stylesheet" href="/views/skills/styles.css" />
+    <!-- Link to a Google font, specifying weights and styles -->
     <link
-      href="https://fonts.googleapis.com/css2?family=K2D:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=K2D:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800&display=swap"
       rel="stylesheet"
     />
+    <!-- Link to another external stylesheet for custom fonts -->
     <link rel="stylesheet" href="/font.css" />
+    
+    <!-- JavaScript module to dynamically import a navbar component -->
     <script type="module" defer>
       import { importHtml } from "/core/framework/index.js";
-
+      
       importHtml({
-        path: "/components/navbar/navbar.html",
-        elementId: "importedHeader",
+        path: "/components/navbar/navbar.html",  // Path to the navbar component.
+        elementId: "importedHeader",            // ID of the element where the navbar will be inserted.
         document: document,
       });
-
     </script>
+
+    <!-- JavaScript module to initialize and control progress bars -->
     <script type="module" async>
       import { elementProcessor } from "/core/framework/index.js";
       import { progressBar } from "/services/progressBar.js";
-
+      
       let progresses = [
         45, 40, 37, 22, 18, 17, 15, 8, 40, 20, 17, 45, 32, 25, 15, 40, 37, 25,
         20, 40, 35, 14,
-      ];
-
-      let bars = document.querySelectorAll(".progress-bar");
+      ]; // Array class="calculator-form-label" holding progress values for each skill.
+      
+      let bars = document.querySelectorAll(".progress-bar"); // Selecting all progress bar elements.
       let progressBars = [];
 
       let importedBars = bars.values().forEach((bar, index) => {
         let progressBarModel = progressBar({
-          element: bar,
-          initialValue: 1,
-          maxValue: progresses[index],
-          speed: 2.5,
+          element: bar,             // The bar element.
+          initialValue: 1,           // Starting value of the progress bar.
+          maxValue: progresses[index],  // Corresponding max value from the array.
+          speed: 2.5,                // Speed at which the progress bar fills.
         });
         progressBars.push(progressBarModel);
         return index;
       });
 
-      let reportMainSectionsHeight = 400;
-
+      // This section controls the shrinking of an element based on height.
+      // Uncomment if needed.
       // elementProcessor({
       //   document: document,
       // }).shrinkElement({
@@ -54,6 +66,7 @@
       // });
 
       window.onload = async () => {
+        // Starts moving the progress bars once the window has loaded
         await progressBars.forEach(async (bar) => {
           await bar.move();
         });
@@ -62,21 +75,28 @@
   </head>
 
   <body>
+    <!-- Dynamic navbar will be imported here via JavaScript -->
     <div id="importedHeader"></div>
 
+    <!-- Main content section for skills categorized as Languages -->
     <section class="report-main-section">
+      <!-- Section header for Languages -->
       <h2 class="skills-header">
         <span class="k2d-regular">Languages</span>
       </h2>
       <div class="skills">
+        <!-- Wrapper for each skill (language) -->
         <div class="skills-wrap">
+          <!-- Placeholder for progress bar of C# -->
           <div class="cs-stats progress-bar" id="csBar"></div>
+          <!-- Description of the skill -->
           <div class="progress-description k2d-light">
-            <h3 class="header">C#</h3>
-            <div class="vertical-line"></div>
+            <h3 class="header">C#</h3> <!-- Subheader for the skill name -->
+            <div class="vertical-line"></div> <!-- Decorative element for design -->
           </div>
         </div>
 
+        <!-- The same structure repeats for other languages -->
         <div class="skills-wrap">
           <div class="js-stats progress-bar" id="jsBar"></div>
           <div class="progress-description k2d-light">
@@ -135,6 +155,7 @@
       </div>
     </section>
 
+    <!-- Section for Tools, following the same structure as Languages -->
     <section class="report-main-section">
       <h2 class="skills-header">
         <span class="k2d-regular">Tools</span>
@@ -166,6 +187,7 @@
       </div>
     </section>
 
+    <!-- Section for Frameworks and Libraries -->
     <section class="report-main-section">
       <h2 class="skills-header">
         <span class="k2d-regular">Frameworks and Libraries</span>
@@ -205,6 +227,7 @@
       </div>
     </section>
 
+    <!-- Section for Operating Systems -->
     <section class="report-main-section">
       <h2 class="skills-header">
         <span class="k2d-regular">Operating Systems</span>
